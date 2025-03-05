@@ -1,10 +1,6 @@
 import heapq
-import random
 import numpy as np
 import time
-import json
-import os
-import sys
 
 # Definición de los grafos
 #Grafo de distancias entre nodos adyacentes
@@ -108,16 +104,10 @@ def print_route_with_interfaces(route):
 
 # Función principal modificada
 def main():
-     #Obtenga los argumentos
-    sourceNode = int(sys.argv[1])
-    destinationNode = int(sys.argv[2])
-    msgClass = int(sys.argv[3])
-
-    start_node = "Nodo"+str(sourceNode)
-    end_node = "Nodo"+str(destinationNode)
-    
+    start_node = input("Ingrese el nodo de inicio para el algoritmo: ")
+    end_node = input("Ingrese el nodo de destino para el algoritmo: ")
     # Preguntar al usuario el tipo de mensaje
-    message_type = str(msgClass)
+    message_type = input("Ingrese el tipo de mensaje (1, 2 o 3): ")
 
     # Inicia la medición del tiempo
     start_time = time.time()
@@ -164,7 +154,7 @@ def main():
     end_time = time.time()
     # Calcula y muestra el tiempo total de simulación
     simulation_time = (end_time - start_time) * 1000
-    print(f"Delay: {simulation_time:.2f}")  # Finaliza la medición del tiempo
+    print(f"Tiempo de simulación: {simulation_time:.2f} milisegundos")  # Finaliza la medición del tiempo
 
 if __name__ == "__main__":
     try:
